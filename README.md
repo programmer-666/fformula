@@ -12,3 +12,17 @@ $f(x)=9.95$
 ## Calculating Root
 A not-so-efficient but working root calculation formula.<br>
 $$\lim_{a \to x}a^{2}< x$$
+
+### Example Code
+```c
+#include <stdio.h>
+#include "fformula.h"
+
+int main()
+{
+    float x[] = {1,3,5,8,9,0};
+    printf("%0.2f", fformula(x, *(&x + 1) - x));
+
+    return 0;
+}
+```

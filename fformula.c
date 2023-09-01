@@ -1,10 +1,11 @@
 /*
-    8/30/23
     programmer-666
     fformula.c
 */
 
 #include "fformula.h"
+
+float a_it = 0;
 
 float root(float number)
 {
@@ -12,28 +13,13 @@ float root(float number)
     // Uses iteration
     // Although not good in terms of performance, it still works
     // \lim_{a \to x}a^{2}< x
-    float a = 0;
 
-    while (a*a < number){
-        a += ROOT_ITER; // Incremental value
+    while (a_it * a_it < number){
+        a_it += ROOT_ITER; // Incremental value
     }
 
-    return a;
+    return a_it;
 }
-
-//float pwr(float base, float exp)
-//{
-//    long double r = 1.0;
-//
-//    while (exp !=0){
-//        r *= base;
-//        --exp;
-//    }
-//    
-//    return r;
-//}
-// Cant calculate root doesnt work; use root function
-// We dont need anymore this function
 
 float fformula(float *array, unsigned size)
 {

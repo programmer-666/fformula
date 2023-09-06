@@ -5,11 +5,14 @@
 
 #ifndef FFORMULA_H_
 #define FFORMULA_H_
-#define ROOT_ITER   1e-7    // Big values makes calculation times long; look at fformula.c:9
-#define RITER_A     1e-3    // Root iterator for a
+#define ROOT_ITER   1e-1    // Big values makes calculation times long
+#define C_MAX       10       // Max value for sqroot iteration
+#define E           2.718281828459045235
 
+long double pwr(float base, float exp); 
 float fformula(float *array, unsigned size);
-//float pwr(float base, float exp); // For more information go to fformula.c:24
-float root(float number);
+//float root(float number);
+double sqroot(double number);
+//unsigned int bpwr(unsigned short base, unsigned short exp); // bitwise power, for 1*10^x
 
 #endif

@@ -1,16 +1,29 @@
 #include <stdio.h>
 #include <time.h>
+#include <math.h>
 #include "fformula.h"
 
 int main(){
     clock_t st, et;
-    st = clock();
+    float test = 2;
+    float sqr, r, msqr;
 
-    //printf("%0.15f\n", root(2));
-    printf("%0.15f\n", root(271441));
-    
+
+    st = clock();
+    sqr = sqroot(test);
+    printf("%0.15f\n", sqr);
     et = clock();
 
-    printf("\n\n%f", (double)(et - st) / CLOCKS_PER_SEC);
+    printf("%f\n\n", (double)(et - st) / CLOCKS_PER_SEC);
+
+    st = clock();
+    msqr = sqrt(test);
+    printf("%0.15f\n", msqr);
+    et = clock();
+
+    printf("%f\n\n", (double)(et - st) / CLOCKS_PER_SEC);
+
+    printf("%0.15f\t%0.15f", fabsf(sqr-msqr), fabsf(r-msqr));
+
     return 0;
 }
